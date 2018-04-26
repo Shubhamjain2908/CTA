@@ -19,5 +19,5 @@
 - Import project in eclipse as existing maven project
 - Run as maven project with command "mvn clean compile install"
 - Modify application.properties to refer your configuration
-- Locate executable JAR file (CTA.jar) inside /target folder
-- Run command "Java -jar CTA.jar (This will launch inbuilt tomcat container and execute the application)
+- Locate executable JAR file (coin-tracking-applilcation-0.0.1-SNAPSHOT.jar) inside /target folder
+- Run command "Java -jar coin-tracking-applilcation-0.0.1-SNAPSHOT.jar (This will launch inbuilt tomcat container and execute the application)

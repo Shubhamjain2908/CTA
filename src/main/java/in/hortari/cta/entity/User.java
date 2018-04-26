@@ -63,6 +63,6 @@ public class User
     private Set<String> favCoins = new HashSet<>();
 	
 	@Column(name = "authentication")
-	private boolean userAuthentication;
+	private Integer userAuthentication = 0;
 }
 

@@ -20,7 +20,7 @@ import in.hortari.cta.service.AuthorizationManager;
  * send them to the server if they are valid. 
  * 
  * @author SHUBHAM JAIN
- * @since 12-02-2018
+ * @since 23-04-2018
  *
  */
 @AllArgsConstructor
@@ -33,28 +33,37 @@ public class ApiInterceptor extends HandlerInterceptorAdapter
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 
-		if (request.getMethod().equals(RequestMethod.POST.name())) {
-			return true;
-		}
+//		if (request.getMethod().equals(RequestMethod.POST.name())) {
+//			return true;
+//		}
+//		
+//		if (request.getMethod().equals(RequestMethod.PUT.name())) {
+//			return true;
+//		}
+//		@SuppressWarnings("unchecked")
+//		Map<String, String> queryParams = (Map<String, String>) request.getParameterNames();
+//		String token = queryParams.get("token");
 		
-		if (request.getMethod().equals(RequestMethod.PUT.name())) {
-			return true;
-		}
-		@SuppressWarnings("unchecked")
-		Map<String, String> pathVariables = (Map<String, String>) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
+//		if (request.getMethod().equals(RequestMethod.GET.name())) {
+//			return true;
+//		}
 		
-		String username = pathVariables.get("username");
-		String secretKey = pathVariables.get("password");
+//		@SuppressWarnings("unchecked")
+//		Map<String, String> pathVariables = (Map<String, String>) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
 		
-		if (StringUtils.isEmpty(secretKey)) {
-            throw new AuthorizationFailedException("Unauthorized to access the service");
-		}
-				
-		if (StringUtils.isEmpty(username)) {
-			throw new AuthorizationFailedException("Unauthorized to access the service");
-		}
-		
-		return authManager.checkAuthorization(username); 
+//		String username = pathVariables.get("username");
+//		String secretKey = pathVariables.get("password");
+//		
+//		if (StringUtils.isEmpty(secretKey)) {
+//            throw new AuthorizationFailedException("Unauthorized to access the service");
+//		}
+//				
+//		if (StringUtils.isEmpty(username)) {
+//			throw new AuthorizationFailedException("Unauthorized to access the service");
+//		}
+//		
+//		return authManager.checkAuthorization(token); 
+		return true;
 	}
 
 }

@@ -85,4 +85,44 @@ public class ApiExceptionHandler
 		response.setUrl(req.getRequestURI());
 		return response;
 	}
+	
+	/**
+	 * Method used to handle {@link NullPointerException}
+	 * @param req
+	 * @param ex
+	 * @return
+	 */
+	@ExceptionHandler({ java.lang.NullPointerException.class })
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@ResponseBody
+	public ApiErrorResponse NullPointerException(HttpServletRequest req, java.lang.NullPointerException ex) 
+	{
+		Logger.getLogger(java.lang.NullPointerException.class.getName()).error(ex.getMessage());;
+		ApiErrorResponse response = new ApiErrorResponse();
+		response.setMessage(ex.getMessage());
+		response.setError(HttpStatus.NO_CONTENT.name());
+		response.setStatus(HttpStatus.NO_CONTENT.value());
+		response.setUrl(req.getRequestURI());
+		return response;
+	}
+	
+	/**
+	 * Method used to handle {@link MailException}
+	 * @param req
+	 * @param ex
+	 * @return
+	 */
+	@ExceptionHandler({ MailException.class })
+	@ResponseStatus(HttpStatus.NETWORK_AUTHENTICATION_REQUIRED)
+	@ResponseBody
+	public ApiErrorResponse MailException(HttpServletRequest req, MailException ex) 
+	{
+		Logger.getLogger(MailException.class.getName()).error(ex.getMessage());;
+		ApiErrorResponse response = new ApiErrorResponse();
+		response.setMessage(ex.getMessage());
+		response.setError(HttpStatus.NETWORK_AUTHENTICATION_REQUIRED.name());
+		response.setStatus(HttpStatus.NETWORK_AUTHENTICATION_REQUIRED.value());
+		response.setUrl(req.getRequestURI());
+		return response;
+	}
 }

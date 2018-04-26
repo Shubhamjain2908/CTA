@@ -3,10 +3,12 @@ package in.hortari.cta.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.hortari.cta.entity.User;
@@ -53,6 +55,9 @@ public class UserController
 	
 	/**
 	 * Used to update an User Information
+	 * 
+	 * @param user
+	 * @return
 	 */
 	@PutMapping("/update")
 	public ResponseEntity<User> updateUser(@RequestBody User user) 
@@ -60,4 +65,9 @@ public class UserController
 		return new ResponseEntity<User>(userService.updateUser(user), HttpStatus.OK);
 	}
 	
+	@GetMapping("/verify")
+	public ResponseEntity<User> authenticateUser(@RequestParam("token") String token) 
+	{
+		return new ResponseEntity<User>(userService.verifyUser(token), HttpStatus.ACCEPTED);
+	}
 }
