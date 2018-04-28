@@ -2,7 +2,7 @@ package in.hortari.cta;
 
 public class ApplicationConstants {
 	
-	public static final String BASE64_UTF = "AES";
+	public static final String BASE64_UTF = "utf-8";
 	
 	public static final String VERIFY_LINK = "http://localhost:9393/v1/users/verify?token=UserNameToken";
 	

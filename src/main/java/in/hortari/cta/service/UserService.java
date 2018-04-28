@@ -70,12 +70,11 @@ public class UserService
 	 */
 	public User updateUser(User user) 
 	{	
-		if(!user.getUserAuthentication().equals(1) || !PasswordEncrypter.checkPassword(user.getPassword(), userRepository.findByUsername(user.getUsername()).getPassword()))
+		if(user.getUserAuthentication().equals(1) && userRepository.findByUsername(user.getUsername())!=null)
 		{
-			throw new AuthorizationFailedException("Password does not matched or you are not Authorized to use this service");
+			return userRepository.save(user);
 		}
-		user.setPassword(PasswordEncrypter.encryptPassword(user.getPassword()));	//Password Encryption
-		return userRepository.save(user);
+		throw new AuthorizationFailedException("You are not Authorized to use this service");
 	}
 	
 	/**

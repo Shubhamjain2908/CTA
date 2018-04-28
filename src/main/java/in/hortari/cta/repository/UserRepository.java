@@ -11,7 +11,7 @@ import in.hortari.cta.entity.User;
  * @since 23-04-2018
  *
  */
-public interface UserRepository extends JpaRepository<User, Integer>
+public interface UserRepository extends JpaRepository<User, String>
 {	
 	public User findByUsername(String username);
 }
