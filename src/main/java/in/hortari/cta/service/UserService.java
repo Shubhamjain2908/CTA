@@ -15,6 +15,9 @@ import in.hortari.cta.service.utils.TokenGenerator;
 import static in.hortari.cta.ApplicationConstants.EMAIL_TEMPLATE;
 import static in.hortari.cta.ApplicationConstants.VERIFY_LINK;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+
 /**
  * This is a service layer which generates response
  * 
@@ -59,7 +62,8 @@ public class UserService
 		{
 			return u;
 		}
-		throw new AuthorizationFailedException("Password does not matched or you are not Authorized to use this service");
+		throw new AuthorizationFailedException("Password does not matched or you are not Authorized to use this service : "
+				+ "Verify yourself by clicking on the link provided to you at your Email");
 		
 	}
 	
@@ -68,13 +72,20 @@ public class UserService
 	 * @param user
 	 * @return
 	 */
-	public User updateUser(User user) 
+	public User updateUser(String username, ArrayList<String> favCoins) 
 	{	
-		if(user.getUserAuthentication().equals(1) && userRepository.findByUsername(user.getUsername())!=null)
+		User user = userRepository.findByUsername(username);
+		if(user == null) 
 		{
+			throw new AuthorizationFailedException("No User exists for given request with Username : " + username);
+		}
+		if(user.getUserAuthentication().equals(1))
+		{
+			user.setFavCoins(new HashSet<String>(favCoins));
 			return userRepository.save(user);
 		}
-		throw new AuthorizationFailedException("You are not Authorized to use this service");
+		throw new AuthorizationFailedException("You are not Authorized to use this service : "
+				+ "Verify yourself by clicking on the link provided to you at your Email");
 	}
 	
 	/**

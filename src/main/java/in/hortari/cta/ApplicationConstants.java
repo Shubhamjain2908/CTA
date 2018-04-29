@@ -20,8 +20,8 @@ public class ApplicationConstants {
 			"<tr>\r\n" + 
 			"<td valign=\"middle\" width=\"100%\" align=\"center\" style=\"border-collapse:collapse;padding:20px 0\" class=\"m_6018240567542498231logo\">\r\n" + 
 			"<div class=\"m_6018240567542498231imgpop\">\r\n" + 
-			"<a href=\"https://www.upwork.com\" style=\"text-emphasis:none\" target=\"_blank\" data-saferedirecturl=\"https://www.google.com/url?hl=en-GB&amp;q=https://www.upwork.com&amp;source=gmail&amp;ust=1524832948552000&amp;usg=AFQjCNEjoI4MoAU_3M1SbXQ5gHtvSjVzSg\">\r\n" + 
-			"<img src=\"https://d1bizmgy8ntmul.cloudfront.net/images/resources/hortari.png\" alt=\"Upwork\" width=\"101\" height=\"39\" border=\"0\" style=\"display:block;outline:none;text-decoration:none;border:none\" class=\"m_6018240567542498231logo CToWUd\">\r\n" + 
+			"<a href=\"https://www.hortari.in\" style=\"text-emphasis:none\" target=\"_blank\" data-saferedirecturl=\"https://www.google.com/url?hl=en-GB&amp;q=https://www.hortari.in&amp;source=gmail&amp;ust=1524832948552000&amp;usg=AFQjCNEjoI4MoAU_3M1SbXQ5gHtvSjVzSg\">\r\n" + 
+			"<img src=\"https://d1bizmgy8ntmul.cloudfront.net/images/resources/hortari.png\" alt=\"hortari\" width=\"101\" height=\"39\" border=\"0\" style=\"display:block;outline:none;text-decoration:none;border:none\" class=\"m_6018240567542498231logo CToWUd\">\r\n" + 
 			"</a>\r\n" + 
 			"</div>\r\n" + 
 			"</td>\r\n" + 

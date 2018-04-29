@@ -71,7 +71,7 @@ public class ResponseHandler implements ResponseBodyAdvice<Object>
 		if (httpRequest.getMethod().equals(HttpMethod.POST) && body instanceof User) 
 		{
 			apiResponse.setMessage("User have been successfully created : "
-					+ "& an email has been sent to your register email address to verify yoir account");
+					+ "& an email has been sent to your register email address to verify your account");
 			apiResponse.setUser((User) body);
 		}
 		

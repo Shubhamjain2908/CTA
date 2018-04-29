@@ -1,5 +1,7 @@
 package in.hortari.cta.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,17 +56,22 @@ public class UserController
 	}
 	
 	/**
-	 * Used to update an User Information
-	 * 
-	 * @param user
+	 * Used to update Currency 
+	 * @param username
+	 * @param favCoins
 	 * @return
 	 */
 	@PutMapping("/update")
-	public ResponseEntity<User> updateUser(@RequestBody User user) 
+	public ResponseEntity<User> updateUser(@RequestParam("username") String username, @RequestParam("favCoins") ArrayList<String> favCoins) 
 	{
-		return new ResponseEntity<User>(userService.updateUser(user), HttpStatus.OK);
+		return new ResponseEntity<User>(userService.updateUser(username, favCoins), HttpStatus.OK);
 	}
 	
+	/**
+	 * API which verifies the user
+	 * @param token
+	 * @return
+	 */
 	@GetMapping("/verify")
 	public ResponseEntity<User> authenticateUser(@RequestParam("token") String token) 
 	{
