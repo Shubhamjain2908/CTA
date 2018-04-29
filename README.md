@@ -12,7 +12,7 @@
 - Create a single table using "user.sql" under resources folder
 
 # Run as
- - mvn clean compile install 
+ - mvn clean compile install (port : 9393)
 
 # Instructions to run as spring boot project
 

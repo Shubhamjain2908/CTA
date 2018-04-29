@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "4f089d74-c684-4ff9-8faf-b353f877e344",
+		"name": "CTA",
+		"description": "A coin tracking application that allows people to signup/login and mark their favorite cryptocurrency and view its daily status.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9393/v1/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"S1\",\n\t\"name\":\"Shubham Jain\",\n\t\"mobile\":\"8871574375\",\n\t\"email\":\"shubhamjain2908@s.a\",\n\t\"password\":\"Shubham29102\",\n\t\"dob\":\"29-08-1996\",\n\t\"favCoins\": [\n            \"Rs\",\n            \"BitCoin\"\n        ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9393/v1/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9393",
+					"path": [
+						"v1",
+						"users",
+						"signup"
+					]
+				},
+				"description": "Create User"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9393/v1/users/signin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"shubham\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9393/v1/users/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9393",
+					"path": [
+						"v1",
+						"users",
+						"signin"
+					]
+				},
+				"description": "Get A user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9393/v1/users/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"S2\",\n\t\"name\":\"Shubham Jain\",\n\t\"mobile\":\"8871574375\",\n\t\"email\":\"shubhamjain2908@gmail.com\",\n\t\"password\":\"Shubham29102\",\n\t\"dob\":\"29-08-1996\",\n\t\"favCoins\": [\n            \"Rs\",\n            \"BitCoin\"\n        ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9393/v1/users/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9393",
+					"path": [
+						"v1",
+						"users",
+						"update"
+					]
+				},
+				"description": "To update an User"
+			},
+			"response": []
+		}
+	]
+}
